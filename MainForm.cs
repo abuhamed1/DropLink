@@ -14,7 +14,7 @@ namespace Droplink
 {
     public partial class MainForm : Form
     {
-        
+
         public MainForm()
         {
             InitializeComponent();
@@ -28,10 +28,9 @@ namespace Droplink
             btnHome.BackColor = Color.FromArgb(59, 130, 246);
 
             pnlMain.Controls.Clear();
-            HomeUserControl ucHome = new HomeUserControl();
-            ucHome.Dock = DockStyle.Fill;
+            HomeUserControl.Instance.Dock = DockStyle.Fill;
 
-            pnlMain.Controls.Add(ucHome);
+            pnlMain.Controls.Add(HomeUserControl.Instance);
         }
 
         private void btnDownloadingList_Click(object sender, EventArgs e)
@@ -56,7 +55,7 @@ namespace Droplink
             btnSettings.BackColor = Color.FromArgb(59, 130, 246);
 
             pnlMain.Controls.Clear();
-            SettingsUserControl ucSettings  = new SettingsUserControl();
+            SettingsUserControl ucSettings = new SettingsUserControl();
             ucSettings.Dock = DockStyle.Fill;
 
             pnlMain.Controls.Add(ucSettings);
@@ -66,5 +65,6 @@ namespace Droplink
         {
             btnHome.PerformClick();
         }
+
     }
 }

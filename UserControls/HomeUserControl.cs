@@ -18,7 +18,20 @@ namespace Droplink.UserControls
         private readonly DownloadService _downloadService = new DownloadService();
         private readonly SettingService _settingService = new SettingService();
 
-        public HomeUserControl()
+        private static HomeUserControl _instance;
+
+        public static HomeUserControl Instance
+        {
+            get
+            {
+                if(_instance == null)
+                    _instance = new HomeUserControl();
+
+                return _instance;
+            }
+        }
+
+        private HomeUserControl()
         {
             InitializeComponent();
         }
